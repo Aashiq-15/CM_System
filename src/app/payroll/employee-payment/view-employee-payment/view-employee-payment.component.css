@@ -1,0 +1,126 @@
+.content {
+  /* border: 1px solid rgb(141, 137, 137); */
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 1px;
+  margin-right:1px ;
+  /* background: rgb(225,239,255);
+  background: radial-gradient(circle, rgb(237, 242, 248) 52%, rgb(218, 216, 238) 96%); */
+  background: rgb(246,246,246);
+background: radial-gradient(circle, rgba(246,246,246,1) 52%, rgba(228,227,242,1) 100%, rgba(196,192,231,1) 100%);
+}
+
+nav{
+  padding: 20px 0px 5px 20px;
+  background: rgb(200, 211, 224);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.breadcrumb li{
+ cursor: pointer;
+}
+#subdetails{
+ text-align: center;
+ margin-top: 30px;
+ margin-bottom: 0 !important;
+}
+
+#add{
+  background: hsl(221, 96%, 35%);
+  color: #fff;
+  padding: 28px;
+  margin-left: 17px !important;
+ }
+
+ .filter{
+   display:flex;
+ }
+
+/* .mat-elevation-z8{
+ border-radius: 10px;
+} */
+#serarch-form {
+  font-size: 14px;
+  width: 89%;
+}
+/*
+td,
+th {
+  width: 10%;
+} */
+
+table {
+ width: 100%;
+
+}
+
+
+
+.mat-mdc-row .mat-mdc-cell {
+ cursor: pointer;
+}
+#main{
+  cursor:text;
+  font-weight: 700;
+}
+.mat-mdc-row:hover .mat-mdc-cell {
+ /* border-color: currentColor; */
+ background: rgb(236, 236, 241);
+ border-radius: 50px;
+
+}
+
+th, td {
+ overflow: hidden;
+ width: 20%;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+}
+.paginator {
+  padding-bottom: 10px;
+}
+.active{
+ color: rgb(13, 13, 212);
+ font-weight:500;
+}
+
+/*------------ For small screens------------*/
+@media only screen and (max-width: 768px) {
+
+  .content {
+    border: none;
+    padding: 0;
+
+  }
+
+  nav{
+    margin:20px  0px 0px;
+    padding: 20px 10px 5px 20px;
+    background: rgb(200, 211, 224);
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  nav li{
+    line-height: 25px;
+  }
+  #subdetails{
+   text-align: center;
+   margin-top: 20px;
+   margin-bottom: 30px !important;
+ }
+  .content {
+
+   background:none ;
+ }
+  #serarch-form {
+   width: 80%;
+ }
+
+  .paginator {
+    padding: 20px 0 30px 0;
+  }
+
+}

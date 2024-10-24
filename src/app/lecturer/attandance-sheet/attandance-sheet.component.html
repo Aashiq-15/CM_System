@@ -1,0 +1,129 @@
+
+<div class="container">
+  <h1 id="heading">Attendance Details</h1>
+  <div class="col-md-12">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li id="main" class="breadcrumb-item" aria-current="page">Lecturer</li>
+        <li class="breadcrumb-item active" aria-current="page" routerLinkActive="router-link-active"
+          routerLink="/ubt-kalmunai/attandance">attandance Sheet</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="form-field">
+    <form  name="lecturerAttandanceForm" >
+      <div class=" row justify-content-center">
+        <div class="marginTop">
+      </div>
+        <div class="col-md-5">
+          <div class='select-option' >
+
+            <mat-form-field appearance="outline">
+              <mat-label>Lecturer ID</mat-label>
+              <mat-select data-live-search="true"   required>
+                <mat-option class='option' ></mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <div class="col-md-5">
+          <div class="input-box">
+
+            <mat-form-field appearance="outline">
+              <mat-label>Lecturer Name</mat-label>
+              <input  matInput placeholder="S1234" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Programme ID</mat-label>
+              <mat-select  data-live-search="true"   required>
+                <mat-option ></mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="input-box">
+
+            <mat-form-field appearance="outline">
+              <mat-label>programme Name</mat-label>
+              <input  matInput placeholder="S1234" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Subject ID</mat-label>
+              <mat-select  data-live-search="true"   required>
+                <mat-option  ></mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="input-box">
+
+            <mat-form-field appearance="outline">
+              <mat-label>Subject Name</mat-label>
+              <input  matInput placeholder="S1234" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="input-box">
+
+            <mat-form-field appearance="outline">
+              <mat-label>hours</mat-label>
+              <input  matInput placeholder="S1234" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>number Of Attandance Students</mat-label>
+              <input type="number"  matInput placeholder="54" required>
+
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Choose a date</mat-label>
+              <input  required matInput  placeholder="YYYY-MM-DD">
+              <mat-datepicker-toggle matSuffix ></mat-datepicker-toggle>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>description</mat-label>
+              <input  matInput placeholder="BIT" required>
+            </mat-form-field>
+          </div>
+        </div>
+
+          <div class="button">
+            <button id="add" mat-button mat-flat-button color="primary" >Save</button>
+            <button mat-button mat-flat-button  color="primary" >Clear</button>
+          </div>
+     </div>
+    </form>
+  </div>
+</div>
+

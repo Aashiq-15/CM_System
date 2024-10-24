@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>Town Details</h2>
+<form >
+  <mat-dialog-content class="mat-typography">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-md-12 col-sm-12">
+          <div *ngIf="errors" class="alert alert-danger">
+            <ul>
+              <li *ngFor="let error of errors.townId">{{ error }}</li>
+
+            </ul>
+          </div>
+        </div> -->
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Town ID</mat-label>
+              <input formControlName="townId" matInput placeholder="S1234" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Town Name</mat-label>
+              <input formControlName="townName" matInput placeholder="john" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Town Description</mat-label>
+              <textarea formControlName="townDescription" matInput required matInput></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-flat-button color="primary"></button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,39 @@
+mat-form-field
+{
+  width: 100%;
+  min-width: 100%;
+  margin-bottom: 8px;
+}
+
+h2{
+text-align: center;
+margin-top: 10px;
+
+
+}
+
+mat-dialog-actions
+{
+  margin: 15px;
+}
+
+mat-dialog-content{
+
+  width: 1000px;
+}
+
+ /*------------ For small screens------------*/
+ @media only screen and (max-width: 768px) {
+
+  mat-form-field
+  {
+    max-width: 100% !important;
+    margin-bottom: 8px;
+  }
+
+mat-dialog-content{
+
+  width: auto;
+}
+
+}

@@ -1,0 +1,121 @@
+<div class="container">
+  <h1 id="subdetails">Lecturer Details</h1>
+  <div class="col-md-12">
+    <nav
+    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+    aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li id="main" class="breadcrumb-item" aria-current="page">Lecturer</li>
+      <li class="breadcrumb-item active" aria-current="page" routerLinkActive="router-link-active"
+        routerLink="/ubt-kalmunai/view-lecturer">View Lecturer</li>
+    </ol>
+  </nav>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-sm-12">
+      <div class="filter">
+        <mat-form-field id="serarch-form" appearance="outline">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+
+      </div>
+      <div class="mat-elevation-z8">
+        <div id="mattable" class="table-responsive">
+          <table mat-table [dataSource]="dataSource" matSort>
+
+
+
+          <ng-container matColumnDef="lecturerPicture">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer Picture </th>
+            <td mat-cell *matCellDef="let row">
+              <img  class="rounded-circle">
+            </td>
+          </ng-container>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+
+            <!-- Subject ID Column -->
+            <ng-container matColumnDef="lecturerId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerId}} </td>
+            </ng-container>
+
+            <!-- Subject Name Column -->
+            <ng-container matColumnDef="lecturerName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerName}} </td>
+            </ng-container>
+            <!-- Subject Name Column -->
+            <ng-container matColumnDef="lecturerMail">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer Mail </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerMail}} </td>
+            </ng-container>
+            <!-- Subject Name Column -->
+            <ng-container matColumnDef="professionalQualification">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Professional Qualification </th>
+              <td mat-cell *matCellDef="let row"> {{row.professionalQualification}} </td>
+            </ng-container>
+            <!-- Subject Name Column -->
+            <ng-container matColumnDef="academicQualification">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> academic Qualification</th>
+              <td mat-cell *matCellDef="let row"> {{row.academicQualification}} </td>
+            </ng-container>
+
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="lecturerNic">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer NIC </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerNic}} </td>
+            </ng-container>
+
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="lecturerPhoneNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer PhoneNo </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerPhoneNo}} </td>
+            </ng-container>
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="lecturerWhatsappNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer WhatsappNo </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerWhatsappNo}} </td>
+            </ng-container>
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="lecturerAddress">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer Address </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerAddress}} </td>
+            </ng-container>
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> date </th>
+              <td mat-cell *matCellDef="let row"> {{row.date | date: 'yyyy-MM-dd'}} </td>
+            </ng-container>
+
+
+            <ng-container id="actions" matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td id="actions" mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" ><mat-icon>edit</mat-icon></button>
+                <button mat-icon-button color="warn" ><mat-icon>delete</mat-icon></button>
+                <p-confirmDialog [transitionOptions]="'100ms'" [breakpoints]="{'960px': '75vw', '640px': '90vw'}" [style]="{width: '50vw'}">
+                </p-confirmDialog>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        </div>
+        <div class="paginator table-responsive">
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

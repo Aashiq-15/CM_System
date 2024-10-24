@@ -1,0 +1,202 @@
+<div class="overflow-x-auto">
+  <mat-toolbar class="bg-primary text-light">
+    <!-- Toggle Button for Sidenav -->
+    <button (click)="sidenav.toggle()" mat-icon-button aria-label="Toggle sidenav">
+      <mat-icon class="white-icon">menu</mat-icon>
+    </button>
+
+    <!-- Branding or Title -->
+    <span>ubt.lk</span>
+
+    <!-- Spacer to push the icons to the right -->
+    <span class="example-spacer"></span>
+
+    <!-- Other Icons on the Toolbar -->
+    <button mat-icon-button aria-label="Favorite">
+      <mat-icon class="white-icon">favorite</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Share">
+      <mat-icon class="white-icon">share</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Notifications">
+      <mat-icon class="white-icon">notifications</mat-icon>
+    </button>
+
+    <!-- Account Dropdown -->
+    <button [matMenuTriggerFor]="menu" mat-icon-button aria-label="Account">
+      <mat-icon class="white-icon">account_circle</mat-icon>
+    </button>
+
+    <!-- Account Menu -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span class="ml-2">Account</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span class="ml-2">Settings</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>help</mat-icon>
+        <span class="ml-2">Help</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span class="ml-2">Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</div>
+
+<!-- Sidenav and Main Content -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" style="background-color: rgb(236, 217, 133); border: none;">
+    <!-- Sidenav Menu -->
+    <mat-nav-list style="margin-left: 24px;">
+      <button mat-menu-item routerLinkActive="router-link-active" routerLink="dashboard">
+        <mat-icon>home</mat-icon><span id="dashboard">Home</span>
+      </button>
+    </mat-nav-list>
+
+    <!-- Main Section -->
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+      <mat-expansion-panel-header>
+        <button mat-menu-item><mat-icon>fiber_new</mat-icon><span>Main</span></button>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="programm">
+          <mat-icon>card_travel</mat-icon>
+          <span>Programm</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="subject">
+          <mat-icon>dns</mat-icon>
+          <span>Subject</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="city">
+          <mat-icon>location_city</mat-icon>
+          <span>City</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="town">
+          <mat-icon>meeting_room</mat-icon>
+          <span>Town</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="country">
+          <mat-icon>public</mat-icon>
+          <span>Country</span>
+        </button>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <!-- Students Section -->
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+      <mat-expansion-panel-header>
+        <button mat-menu-item><mat-icon>supervisor_account</mat-icon><span>Students</span></button>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="addStudent">
+          <mat-icon>add_circle</mat-icon>
+          <span>New Student</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="pendingStudent">
+          <mat-icon>view_list</mat-icon>
+          <span>Pending Student</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="registerStudent">
+          <mat-icon>view_list</mat-icon>
+          <span>Register Student</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="studentCollection">
+          <mat-icon>ballot</mat-icon>
+          <span>Student Collection</span>
+        </button>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <!-- Lecturer Section -->
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+      <mat-expansion-panel-header>
+        <button mat-menu-item><mat-icon>supervised_user_circle</mat-icon><span>Lecturer</span></button>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="addLecturer">
+          <mat-icon>add_circle</mat-icon>
+          <span>Add Lecturer</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="viewLecturer">
+          <mat-icon>view_list</mat-icon>
+          <span>View Lecturer</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="attendance">
+          <mat-icon>how_to_reg</mat-icon>
+          <span>Attendance</span>
+        </button>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <!-- Employee Section -->
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+      <mat-expansion-panel-header>
+        <button mat-menu-item><mat-icon>supervised_user_circle</mat-icon><span>Employee</span></button>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="addEmployee">
+          <mat-icon>add_circle</mat-icon>
+          <span>Add Employee</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="viewEmployee">
+          <mat-icon>view_list</mat-icon>
+          <span>View Employee</span>
+        </button>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <!-- Transactions Section -->
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+      <mat-expansion-panel-header>
+        <button mat-menu-item><mat-icon>supervisor_account</mat-icon><span>Transactions</span></button>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="transaction">
+          <mat-icon>add_circle</mat-icon>
+          <span>New Transaction</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="transactionSummary">
+          <mat-icon>add_circle</mat-icon>
+          <span>Transaction Summary</span>
+        </button>
+      </mat-nav-list>
+    </mat-expansion-panel>
+
+    <!-- Payroll Section -->
+    <mat-expansion-panel [class.mat-elevation-z0]="true">
+      <mat-expansion-panel-header>
+        <button mat-menu-item><mat-icon>supervisor_account</mat-icon><span>Payroll</span></button>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="employeePayment">
+          <mat-icon>add_circle</mat-icon>
+          <span>Employee Payment</span>
+        </button>
+        <button mat-menu-item routerLinkActive="router-link-active" routerLink="lecturerPayment">
+          <mat-icon>add_circle</mat-icon>
+          <span>Lecturer Payment</span>
+        </button>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

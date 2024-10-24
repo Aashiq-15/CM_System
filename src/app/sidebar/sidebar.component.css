@@ -1,0 +1,49 @@
+.sidenav-container {
+  height: 95%;
+}
+
+.mat-sidenav {
+  width: 250px;
+}
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  padding: 20px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.white-icon {
+  color: white;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+mat-expansion-panel {
+  background-color: rgb(245, 241, 224);
+  border: none;
+  border-radius: 0 0 0 0;
+}
+
+mat-expansion-panel-header button span {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(177, 7, 7);
+}
+
+#dashboard {
+  font-size: 15px;
+}
+
+mat-nav-list button span {
+  font-size: 13px;
+  color: rgb(121, 6, 6);
+}

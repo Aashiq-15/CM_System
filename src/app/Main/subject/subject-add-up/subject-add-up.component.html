@@ -1,0 +1,59 @@
+<h2 mat-dialog-title>Subject Details</h2>
+<form (ngSubmit)="subject()" [formGroup]="subjectForm">
+  <mat-dialog-content class="mat-typography">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+
+
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Subject ID</mat-label>
+              <input formControlName="subjectId" matInput placeholder="S1234" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+              <mat-error *ngIf="subjectForm.controls['subjectId'].errors?.['required']">Subject ID is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Subject Name</mat-label>
+              <input formControlName="subjectName" matInput placeholder="john" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+              <mat-error *ngIf="subjectForm.controls['subjectName'].errors?.['required']">Subject Name is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Subject Hours /credit</mat-label>
+              <input formControlName="subjectHours" matInput placeholder="4 Hours" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+              <mat-error *ngIf="subjectForm.controls['subjectHours'].errors?.['required']">Credit/ hours is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Subject Description</mat-label>
+              <textarea formControlName="subjectDescription" matInput required matInput></textarea>
+              <mat-error *ngIf="subjectForm.controls['subjectDescription'].errors?.['required']">Subject Description is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-flat-button color="primary" [disabled]="!subjectForm.valid">{{data ? 'Update': 'Save'}}</button>
+  </mat-dialog-actions>
+</form>
+

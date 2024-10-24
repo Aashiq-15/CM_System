@@ -1,0 +1,109 @@
+<div class="container">
+  <h1 id="heading">Employee Details</h1>
+  <div class="col-md-12">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li id="main" class="breadcrumb-item" aria-current="page">Employee</li>
+        <li class="breadcrumb-item active" aria-current="page" routerLinkActive="router-link-active"
+          routerLink="/add-employee">Add Employee</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="form-field">
+    <form name="employeeForm" >
+      <div class=" row justify-content-center">
+
+        <div>
+          <div class="image-box">
+              <img  id="image"  class="rounded-circle" height="100px">
+            <input class="form-control"  id="input" type="file" >
+          </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Employee ID</mat-label>
+              <input matInput placeholder="S1234" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Employee Name</mat-label>
+              <input  matInput placeholder="Mr.john" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Employee NIC</mat-label>
+              <input matInput placeholder="123456789V" required>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Employee Mail</mat-label>
+              <input  matInput placeholder="employee@gmail.com" required>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Employee Educational Qualification</mat-label>
+              <input  matInput placeholder="Bsc" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Choose a date</mat-label>
+              <input  required matInput  placeholder="YYYY-MM-DD">
+              <mat-datepicker-toggle matSuffix ></mat-datepicker-toggle>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Employee Phone NO</mat-label>
+              <input type="number"  matInput placeholder="0777123456" required>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-5 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Employee Whatsapp No</mat-label>
+              <input type="number"  matInput placeholder="0777123456" required>
+            </mat-form-field>
+          </div>
+          </div>
+          <div class="col-md-10 col-sm-12">
+            <div class="input-box">
+              <mat-form-field appearance="outline">
+                <mat-label>Employee Address</mat-label>
+                <textarea  matInput placeholder="Colombo-01" required></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="button">
+            <button id="add" mat-button mat-flat-button color="primary" >Save</button>
+            <button mat-button mat-flat-button  color="primary" >Clear</button>
+          </div>
+      </div>
+    </form>
+  </div>
+</div>
+

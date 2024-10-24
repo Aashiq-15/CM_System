@@ -1,0 +1,112 @@
+.row {
+
+  padding: 50px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: rgb(246,246,246);
+  background: radial-gradient(circle, rgba(246,246,246,1) 52%, rgba(228,227,242,1) 100%, rgba(196,192,231,1) 100%);
+}
+
+mat-form-field {
+  min-width: 80%;
+  margin-top: 5px;
+}
+
+.row {
+  margin-top: 15px;
+}
+
+table {
+  width: 100%;
+}
+.breadcrumb li{
+  cursor: pointer;
+}
+#main{
+  cursor:text;
+  font-weight: 700;
+}
+nav{
+  margin:20px  -12px -12px;
+  padding: 20px 0px 5px 20px;
+  background: rgb(200, 211, 224);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.active{
+  color: rgb(13, 13, 212);
+  font-weight:500;
+}
+#serarch-form {
+  font-size: 14px;
+  width: 100%;
+}
+
+th, td {
+  overflow: hidden;
+  width: 20%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.paginator {
+  padding-bottom: 10px;
+}
+.payment-pay {
+  margin-top: 3px;
+}
+.mat-mdc-row:hover .mat-mdc-cell {
+  /* border-color: currentColor; */
+  background: rgb(236, 236, 241);
+  border-radius: 50px;
+  cursor: pointer;
+
+}
+#heading {
+text-align: center;
+  margin-top: 30px;
+}
+
+/*------------ For small screens------------*/
+@media only screen and (max-width: 768px) {
+
+
+  mat-form-field {
+    min-width: 100%;
+  }
+  .row {
+    border: none;
+   background: none;
+
+
+  }
+  nav{
+    margin:20px  0px 0px;
+    padding: 20px 0px 5px 20px;
+    background: rgb(200, 211, 224);
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  nav li{
+    line-height: 25px;
+  }
+
+  .row {
+    border: none;
+    padding: 0;
+
+  }
+
+  .payment-pay {
+    margin: 8px 0 30px 0;
+  }
+
+  .paginator {
+    padding: 20px 0 30px 0;
+  }
+
+
+  /* #actions {
+
+   inline-bl
+  } */
+}

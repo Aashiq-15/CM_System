@@ -1,0 +1,95 @@
+
+
+.inputbox mat-form-field{
+  width: 100%;
+}
+/* .background-colour{ */
+  /* background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgb(15, 84, 150) 0%, rgb(236, 45, 38) 100%); */
+  /* background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgb(15, 84, 150) 0%, rgb(78, 5, 3) 100%);
+} */
+
+.register-password{
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#forgot{
+  margin-top: 10px;
+}
+
+.login button{
+  width: 100%;
+}
+img{
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 500px;
+  height: 320px;
+}
+
+ .box-area{
+  width: 930px;
+}
+/*------------ Right box ------------*/
+.right-box{
+  padding: 40px 30px 40px 40px;
+}
+/*------------ Custom Placeholder ------------*/
+::placeholder{
+  font-size: 16px;
+}
+.rounded-4{
+  border-radius: 20px;
+}
+.rounded-5{
+  border-radius: 30px;
+}
+.inputbox{
+  margin-bottom: 2%;
+}
+
+h1{
+  font-weight:700;
+  font-size:2rem;
+
+
+
+}
+/*------------ For small screens------------*/
+@media only screen and (max-width: 768px){
+   .box-area{
+      margin: 0 10px;
+   }
+   .left-box{
+      height: 300px;
+      overflow: hidden;
+   }
+   .right-box{
+      padding: 20px;
+   }
+
+   .link a{
+      margin-left: 26.5%;
+
+  }
+  img{
+
+      border-radius: 20px;
+      margin: 2px;
+      height: 270px !important;
+      width: 300px !important;
+  }
+  .container{
+      overflow: hidden;
+  }
+
+  h1{
+
+      text-align: center;
+
+
+    }
+}

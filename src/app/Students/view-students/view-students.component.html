@@ -1,0 +1,327 @@
+<div class="container">
+  <div class="row">
+    <h1 id="subdetails">Students Details</h1>
+    <div class="col-lg-12">
+      <nav
+        style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+        aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li id="main" class="breadcrumb-item" aria-current="page">Student</li>
+          <li class="breadcrumb-item active" aria-current="page" routerLinkActive="router-link-active"
+            routerLink="/ubt-kalmunai/viewPendingStudent">Pending student</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row content">
+    <div class="col-lg-12">
+      <div class="filter">
+        <mat-form-field id="serarch-form" appearance="outline">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+
+      </div>
+      <div class="mat-elevation-z8">
+        <div id="mattable" class="table-responsive">
+          <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+
+            <ng-container id="action1" matColumnDef="action1">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>To Register </th>
+              <td id="action1" mat-cell *matCellDef="let row">
+                <button mat-icon-button color="secoundary"><mat-icon>autorenew</mat-icon></button>
+              </td>
+            </ng-container>
+
+            <!-- studentPicture Column -->
+            <ng-container matColumnDef="studentPicture">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Student Picture </th>
+              <td mat-cell *matCellDef="let row"><img class="rounded-circle"></td>
+            </ng-container>
+
+            <!-- Subject ID Column -->
+            <ng-container matColumnDef="studentId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Student ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.studentId}} </td>
+            </ng-container>
+
+            <!-- batchNo Column -->
+            <ng-container matColumnDef="batchNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Batch No </th>
+              <td mat-cell *matCellDef="let row"> {{row.batchNo}} </td>
+            </ng-container>
+
+            <!-- course Column -->
+            <ng-container matColumnDef="course">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Course </th>
+              <td mat-cell *matCellDef="let row"> {{row.course}} </td>
+            </ng-container>
+            <!-- other Column -->
+            <ng-container matColumnDef="other">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> other </th>
+              <td mat-cell *matCellDef="let row"> {{row.other}} </td>
+            </ng-container>
+            <!-- fullName Column -->
+            <ng-container matColumnDef="fullName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.fullName}} </td>
+            </ng-container>
+            <!-- nameWithInitial Column -->
+            <ng-container matColumnDef="nameWithInitial">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name with initial </th>
+              <td mat-cell *matCellDef="let row"> {{row.nameWithInitial}} </td>
+            </ng-container>
+            <!-- sex Column -->
+            <ng-container matColumnDef="sex">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+              <td mat-cell *matCellDef="let row"> {{row.sex}} </td>
+            </ng-container>
+            <!-- dateOfBirth Column -->
+            <ng-container matColumnDef="dateOfBirth">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> date Of Birth </th>
+              <td mat-cell *matCellDef="let row"> {{row.dateOfBirth | date: 'yyyy-MM-dd'}} </td>
+            </ng-container>
+            <!-- studentNIC Column -->
+            <ng-container matColumnDef="studentNic">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Student NIC </th>
+              <td mat-cell *matCellDef="let row"> {{row.studentNic}} </td>
+            </ng-container>
+            <!-- passportNo Column -->
+            <ng-container matColumnDef="passportNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Passport No </th>
+              <td mat-cell *matCellDef="let row"> {{row.passportNo}} </td>
+            </ng-container>
+            <!-- permanantAddress Column -->
+            <ng-container matColumnDef="permanantAddress">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Permanant Address </th>
+              <td mat-cell *matCellDef="let row"> {{row.permanantAddress}} </td>
+            </ng-container>
+            <!-- currentAddress Column -->
+            <ng-container matColumnDef="currentAddress">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Current Address </th>
+              <td mat-cell *matCellDef="let row"> {{row.currentAddress}} </td>
+            </ng-container>
+            <!-- mobileNo Column -->
+            <ng-container matColumnDef="mobileNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile No </th>
+              <td mat-cell *matCellDef="let row"> {{row.mobileNo}} </td>
+            </ng-container>
+            <!-- telephoneNo Column -->
+            <ng-container matColumnDef="telephoneNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Telephone No </th>
+              <td mat-cell *matCellDef="let row"> {{row.telephoneNo}} </td>
+            </ng-container>
+            <!-- email Column -->
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+              <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+            </ng-container>
+            <!-- guardianName Column -->
+            <ng-container matColumnDef="guardianName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Guardian Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.guardianName}} </td>
+            </ng-container>
+            <!-- guardianPhoneNumber Column -->
+            <ng-container matColumnDef="guardianPhoneNumber">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Guardian PhoneNumber </th>
+              <td mat-cell *matCellDef="let row"> {{row.guardianPhoneNumber}} </td>
+            </ng-container>
+            <!-- guardianTelephoneNumber Column -->
+            <ng-container matColumnDef="guardianTelephoneNumber">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Guardian Telephone Number </th>
+              <td mat-cell *matCellDef="let row"> {{row.guardianTelephoneNumber}} </td>
+            </ng-container>
+            <!-- ol_year Column -->
+            <ng-container matColumnDef="olYear">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Year </th>
+              <td mat-cell *matCellDef="let row"> {{row.olYear}} </td>
+            </ng-container>
+            <!-- ol_index Column -->
+            <ng-container matColumnDef="olIndex">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Index </th>
+              <td mat-cell *matCellDef="let row"> {{row.olIndex}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject1">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject1}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade1">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade1}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject2">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject2}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade2">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade2}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject3">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject3}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade3">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade3}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject4">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject4}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade4">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade4}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject5">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject5}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade5">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade5}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject6">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject6}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade6">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade6}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject7">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject7}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade7">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade7}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject8">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject8}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade8">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade8}} </td>
+            </ng-container>
+            <!-- o/l_subject1 Column -->
+            <ng-container matColumnDef="olSubject9">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> O/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.olSubject9}}</td>
+            </ng-container>
+            <!-- o/l_grade1 Column -->
+            <ng-container matColumnDef="olGrade9">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.olGrade9}} </td>
+            </ng-container>
+
+            <!-- a/l_stream Column -->
+            <ng-container matColumnDef="alStream">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> A/L Stream </th>
+              <td mat-cell *matCellDef="let row"> {{row.alStream}} </td>
+            </ng-container>
+            <!-- a/l_year Column -->
+            <ng-container matColumnDef="alYear">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> A/L Year </th>
+              <td mat-cell *matCellDef="let row"> {{row.alYear}} </td>
+            </ng-container>
+            <!-- a/l_index Column -->
+            <ng-container matColumnDef="alIndex">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> A/L Index </th>
+              <td mat-cell *matCellDef="let row"> {{row.alIndex}} </td>
+            </ng-container>
+            <!-- a/l_zscore Column -->
+            <ng-container matColumnDef="alZscore">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> A/L Zscore </th>
+              <td mat-cell *matCellDef="let row"> {{row.alZscore}} </td>
+            </ng-container>
+            <!-- a/l_subject1 Column -->
+            <ng-container matColumnDef="alSubject1">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> A/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.alSubject1}}</td>
+            </ng-container>
+            <!-- a/l_grade1 Column -->
+            <ng-container matColumnDef="alGrade1">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.alGrade1}} </td>
+            </ng-container>
+            <!-- a/l_subject1 Column -->
+            <ng-container matColumnDef="alSubject2">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> A/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.alSubject2}}</td>
+            </ng-container>
+            <!-- a/l_grade1 Column -->
+            <ng-container matColumnDef="alGrade2">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.alGrade2}} </td>
+            </ng-container>
+            <!-- a/l_subject1 Column -->
+            <ng-container matColumnDef="alSubject3">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> A/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.alSubject3}}</td>
+            </ng-container>
+            <!-- a/l_grade1 Column -->
+            <ng-container matColumnDef="alGrade3">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.alGrade3}} </td>
+            </ng-container>
+            <!-- a/l_subject1 Column -->
+            <ng-container matColumnDef="alSubject4">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> A/L Subject </th>
+              <td mat-cell *matCellDef="let row">{{row.alSubject4}}</td>
+            </ng-container>
+            <!-- a/l_grade1 Column -->
+            <ng-container matColumnDef="alGrade4">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Grade </th>
+              <td mat-cell *matCellDef="let row"> {{row.alGrade4}} </td>
+            </ng-container>
+            <ng-container id="action2" matColumnDef="action2">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td id="actions2" mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button>
+                <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
+                <!-- <button mat-icon-button (click)="showDetails(row.id)"><mat-icon>visibility</mat-icon></button> -->
+                <p-confirmDialog [transitionOptions]="'100ms'" [breakpoints]="{'960px': '75vw', '640px': '90vw'}"
+                  [style]="{width: '50vw'}">
+                </p-confirmDialog>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        </div>
+        <div class="paginator table-responsive">
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

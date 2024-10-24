@@ -1,0 +1,175 @@
+mat-form-field {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.form-field {
+  border-radius: 10px;
+  margin-top: 30px;
+  background: rgb(246, 246, 246);
+  background: radial-gradient(circle, rgba(246, 246, 246, 1) 52%, rgba(228, 227, 242, 1) 100%, rgba(196, 192, 231, 1) 100%);
+}
+.label{
+  background: rgb(210, 210, 219);
+  padding: 15px 0 20px 20px ;
+  border-radius: 5px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.enterline{
+  margin-bottom: 20px;
+}
+/* line start */
+.horizontal {
+  width: 83%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  flex: 1;
+}
+.text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line stop */
+
+.calender{
+  width: 100%;
+}
+.breadcrumb li {
+  cursor: pointer;
+}
+#fileupload{
+  margin-bottom: 20px;
+  width: 100%;
+}
+.marginTop {
+
+  margin-top: 50px;
+}
+
+#input{
+
+color: blue;
+cursor: pointer;
+
+}
+
+#input {
+
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  color: blue;
+  width: 300px;
+}
+
+
+#main {
+  cursor: text;
+  font-weight: 700;
+}
+
+.active {
+  color: rgb(9, 9, 202);
+  font-weight: 500;
+}
+
+nav{
+  padding: 20px 0px 5px 20px;
+  background: rgb(200, 211, 224);
+  border-radius: 5px;
+}
+
+
+#heading {
+
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.button {
+  margin-left: 16.70%;
+  margin-bottom: 3%;
+}
+
+#add {
+  margin-right: 20px;
+}
+.termCondition{
+  display: flex;
+}
+#p-button
+{
+  margin: 0 0 0 5px;
+
+}
+
+
+.alert{
+  margin:20px auto;
+  position:relative;
+  border-radius:5px;
+  box-shadow:0 0 15px 5px #ccc;
+  color: aliceblue;
+  background-color: rgb(151, 6, 6);
+
+}
+/*------------ For small screens------------*/
+@media only screen and (max-width: 768px) {
+
+
+
+  .label{
+    background: rgb(198, 197, 230);
+    padding: 20px 0 20px 20px ;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    width: 100%;
+
+  }
+
+  #input {
+
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    color: blue;
+    width: 250px;
+  }
+
+  .container {
+    overflow: hidden;
+  }
+
+  nav {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  nav li{
+    line-height: 25px;
+  }
+  .form-field {
+    background: none;
+    border-radius: 0;
+    margin-top: 0;
+  }
+
+  .button {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+
+
+
+}

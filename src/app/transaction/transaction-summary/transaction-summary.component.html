@@ -1,0 +1,281 @@
+<div class="container">
+  <div class="row">
+    <h1 id="subdetails">Cashflow Details</h1>
+    <div class="col-md-12 mt-4">
+      <nav
+        style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+        aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li id="main" class="breadcrumb-item" aria-current="page">cashflow</li>
+          <li class="breadcrumb-item" aria-current="page" routerLinkActive="router-link-active"
+            routerLink="/ubt-kalmunai/transaction">New Transection</li>
+
+          <li class="breadcrumb-item active" aria-current="page" routerLinkActive="router-link-active"
+            routerLink="/ubt-kalmunai/transaction-summary">Summary</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row content">
+    <form >
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field id="date" appearance="outline">
+            <mat-label>Select The From Date</mat-label>
+            <input required matInput  placeholder="YYYY-MM-DD" (dateInput)="onDateInput1($event)">
+            <mat-datepicker-toggle matIconSuffix ></mat-datepicker-toggle>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+          <mat-form-field id="date" appearance="outline">
+            <mat-label>Select The To Date</mat-label>
+            <input required matInput  placeholder="YYYY-MM-DD" (dateInput)="onDateInput2($event)">
+            <mat-datepicker-toggle matIconSuffix ></mat-datepicker-toggle>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+            <mat-form-field id="serarch-form" appearance="outline">
+              <mat-label>Ledger</mat-label>
+              <mat-select (ngModelChange)='onOptionsSelectedForLedger()' required>
+                <mat-option *ngFor="let service of services" value="{{service}}">{{service}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </form>
+
+    <div class="col-md-6">
+      <div class="mat-elevation-z8">
+        <div id="mattable" class="table-responsive">
+          <table mat-table [dataSource]="dataSource1" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+            <!-- Subject ID Column -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> DATE </th>
+              <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+            </ng-container>
+
+            <!-- Subject Name Column -->
+            <ng-container matColumnDef="ledger">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> LEDGER </th>
+              <td mat-cell *matCellDef="let row"> {{row.ledger}} </td>
+            </ng-container>
+
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="transection_type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> TRANSECTION TYPE </th>
+              <td mat-cell *matCellDef="let row"> {{row.transection_type}} </td>
+            </ng-container>
+
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="receiptNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> RECEIPT NO </th>
+              <td mat-cell *matCellDef="let row"> {{row.receiptNo}} </td>
+            </ng-container>
+
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="amount">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> AMOUNT </th>
+              <td mat-cell *matCellDef="let row"> {{row.amount}} </td>
+            </ng-container>
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> DESCRIPTION </th>
+              <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+            </ng-container>
+            <!-- Subject Description Column -->
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <!-- <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr> -->
+          </table>
+        </div>
+        <div class="paginator table-responsive">
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 table2">
+      <div class="mat-elevation-z8">
+        <div id="mattable" class="table-responsive">
+          <table mat-table [dataSource]="dataSource2" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+            <!-- Subject ID Column -->
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> DATE </th>
+              <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+            </ng-container>
+
+            <!-- Subject Name Column -->
+            <ng-container matColumnDef="ledger">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> LEDGER </th>
+              <td mat-cell *matCellDef="let row"> {{row.ledger}} </td>
+            </ng-container>
+
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="transection_type">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> TRANSECTION TYPE </th>
+              <td mat-cell *matCellDef="let row"> {{row.transection_type}} </td>
+            </ng-container>
+
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="receiptNo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> RECEIPT NO </th>
+              <td mat-cell *matCellDef="let row"> {{row.receiptNo}} </td>
+            </ng-container>
+
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="amount">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> AMOUNT </th>
+              <td mat-cell *matCellDef="let row"> {{row.amount}} </td>
+            </ng-container>
+            <!-- Subject Description Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> DESCRIPTION </th>
+              <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+            </ng-container>
+            <!-- Subject Description Column -->
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <!-- <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr> -->
+          </table>
+        </div>
+        <div class="paginator table-responsive">
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 col-md-6">
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Total CashIn:
+              <span>Rs.{{ totalCashInAmount }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-panel-description>
+            <div class="amount"><label>Total Amount : </label><span>{{ totalCashInAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Net Amount : </label><span>{{ netAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Discount Amount : </label><span>{{ discountAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Total Amount : </label><span>{{ amount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Balance : </label><span>{{balance}}</span></div>
+          </mat-panel-description>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="mt-5 col-md-6">
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+               Total Expenses:
+               <span>Rs.{{ totalExpensesAmount }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-panel-description>
+            <div class="amount"><label>Total Amount : </label><span>{{ totalCashInAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Net Amount : </label><span>{{ netAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Discount Amount : </label><span>{{ discountAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Total Amount : </label><span>{{ amount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Balance : </label><span>{{balance}}</span></div>
+          </mat-panel-description>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="mt-5 col-md-6">
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Total CashOut(Other):
+              <span>Rs.{{ totalCashOutAmount }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-panel-description>
+            <div class="amount"><label>Total Amount : </label><span>{{ totalCashInAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Net Amount : </label><span>{{ netAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Discount Amount : </label><span>{{ discountAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Total Amount : </label><span>{{ amount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Balance : </label><span>{{balance}}</span></div>
+          </mat-panel-description>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="mt-5 col-md-6">
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Total Summary:
+              <span>Rs.{{ totalSummaryAmount }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-panel-description>
+            <div class="amount"><label>Total Amount : </label><span>{{ totalCashInAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Net Amount : </label><span>{{ netAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Discount Amount : </label><span>{{ discountAmount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Total Amount : </label><span>{{ amount }}</span></div>
+          </mat-panel-description>
+          <mat-panel-description>
+            <div class="amount"><label>Balance : </label><span>{{balance}}</span></div>
+          </mat-panel-description>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

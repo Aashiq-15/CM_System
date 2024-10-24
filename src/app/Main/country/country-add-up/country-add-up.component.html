@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Country Details</h2>
+<form  name="countryForm" >
+  <mat-dialog-content class="mat-typography">
+    <div class="container">
+      <div class="row">
+
+
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Country ID</mat-label>
+              <input  matInput placeholder="C1234" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Country Name</mat-label>
+              <input  matInput placeholder="john" required>
+              <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Description</mat-label>
+              <textarea matInput required matInput></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-flat-button color="primary" ></button>
+  </mat-dialog-actions>
+</form>
+

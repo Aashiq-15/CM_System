@@ -1,0 +1,167 @@
+<div class="container">
+  <h1 id="heading">Lecturer Payments</h1>
+  <div class="col-md-12">
+    <nav
+    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+    aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li id="main" class="breadcrumb-item" aria-current="page">Payroll</li>
+      <li class="breadcrumb-item active" aria-current="page" routerLinkActive="router-link-active"
+        routerLink="/ubt/lecturer-payment">Lecturer Payments</li>
+      <li class="breadcrumb-item" aria-current="page" routerLinkActive="router-link-active"
+        routerLink="/ubt/employee-payment">Employee Payments</li>
+    </ol>
+  </nav>
+  </div>
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+      <div class="col-md-12 col-sm-12">
+        <form  name="lecturerPaymentForm" >
+
+          <div class="col-md-12">
+            <div class="input-box">
+              <mat-form-field appearance="outline">
+                <mat-label>Lecturer ID</mat-label>
+                <mat-select  data-live-search="true"   required>
+                  <mat-option></mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12">
+            <div class="input-box">
+              <mat-form-field appearance="outline">
+                <mat-label>Lecturer Name</mat-label>
+                <input  matInput placeholder="john" required>
+                <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="input-box">
+              <mat-form-field appearance="outline">
+                <mat-label>Choose a date</mat-label>
+                <input  matInput required >
+                <mat-datepicker-toggle matIconSuffix ></mat-datepicker-toggle>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12">
+            <div class="input-box">
+              <mat-form-field appearance="outline">
+                <mat-label>Total Class Hours</mat-label>
+                <input type="number"  matInput required>
+                <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <div class="input-box">
+              <mat-form-field appearance="outline">
+                <mat-label>Total Payment Amount</mat-label>
+                <input type="number"  matInput required>
+                <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="payment-pay">
+            <button mat-flat-button color="primary" >Pay</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <mat-form-field id="serarch-form" appearance="outline">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field>
+
+      <div class="mat-elevation-z8">
+        <div class="table-responsive">
+          <table mat-table [dataSource]="dataSource" matSort>
+
+
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="lecturerId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerId}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="lecturerName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Lecturer Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.lecturerName}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+              <td mat-cell *matCellDef="let row"> {{row.date | date: 'yyyy-MM-dd'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="programmeId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Programme ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.programmeId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="programmeName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Programme Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.programmeName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="subjectId">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> subject ID </th>
+              <td mat-cell *matCellDef="let row"> {{row.subjectId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="subjectName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject Name </th>
+              <td mat-cell *matCellDef="let row"> {{row.subjectName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="hours">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Hours </th>
+              <td mat-cell *matCellDef="let row"> {{row.hours}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="settle_amount">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Settle Amount </th>
+              <td mat-cell *matCellDef="let row" contenteditable=true> {{row.settle_amount}} </td>
+            </ng-container>
+
+            <ng-container id="payment" matColumnDef="payment" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Payent </th>
+              <td id="payment" mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" ><mat-icon>edit</mat-icon></button>
+              </td>
+            </ng-container>
+
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        </div>
+        <div class="paginator table-responsive">
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

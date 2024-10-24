@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row">
+    <h1 id="heading">Students Collection</h1>
+    <div class="col-md-12">
+      <nav
+        style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+        aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li id="main" class="breadcrumb-item" aria-current="page">Student</li>
+          <li class="breadcrumb-item active" aria-current="page" routerLinkActive="router-link-active"
+            routerLink="/studentCollection">Students Collection</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="row background justify-content-center">
+    <div class="margins col-md-8">
+      <div class="row">
+        <form name="studentCollectionForm" >
+          <div class="row searchForm">
+            <div class="col-md-12 mb-2 studentid">
+              <mat-form-field appearance="outline">
+                <mat-label>Student ID</mat-label>
+                <input matInput class="form-control" placeholder="John" >
+              </mat-form-field>
+              <button mat-flat-button color="primary"  id="add">Search</button>
+            </div>
+
+
+            <div class="label mb-4 label2 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Student Name</mat-label>
+                <input matInput class="form-control" placeholder="John" >
+              </mat-form-field>
+            </div>
+
+            <div class="label mb-4 label2 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Programm Name</mat-label>
+                <input matInput class="form-control" placeholder="Programm" >
+              </mat-form-field>
+
+            </div>
+            <div class="label mb-4 label2 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Remin Register Fees</mat-label>
+                <input matInput class="form-control" placeholder="Remaining Registration Fees:" >
+              </mat-form-field>
+
+            </div>
+            <div class="label mb-4 label2 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Remin Programe Fees</mat-label>
+                <input matInput class="form-control" placeholder="Remaining Programme Fees:">
+              </mat-form-field>
+
+            </div>
+
+            <div class="enterline col-md-12 mb-4">
+              <p-divider align="center">
+                <span class="p-tag">Payment Side :</span>
+              </p-divider>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+              <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Payment Category</mat-label>
+                  <mat-select class="form-control">
+                    <mat-option value="Registration Fees">Registration Fees</mat-option>
+                    <mat-option value="Course Installment">Course Installment</mat-option>
+                    <mat-option value="Certificate Amount">Certificate Amount</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Amount</mat-label>
+                  <input class="form-control"   matInput placeholder="750000">
+                </mat-form-field>
+              </div>
+
+              <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                  <mat-label>Recept No</mat-label>
+                  <input class="form-control"  matInput placeholder="Receipt001">
+                </mat-form-field>
+              </div>
+
+            </div>
+           </div>
+          </div>
+          <button mat-flat-button color="primary">Pay</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

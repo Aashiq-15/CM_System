@@ -1,0 +1,51 @@
+
+
+    <!----------------------- Main Container -------------------------->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+      <!----------------------- Login Container -------------------------->
+         <div class="row border rounded-5 p-3 bg-white shadow box-area">
+      <!--------------------------- Left Box ----------------------------->
+         <div class=" background-colour col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
+             <div class="featured-image mb-3">
+              <img src="/assets/images/keypad-454453.jpg" class="img-fluid">
+             </div>
+             <!-- <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Join experienced Designers on this platform.</small> -->
+         </div>
+      <!-------------------- ------ Right Box ---------------------------->
+
+         <!-- <div class="col-md-6 right-box"> -->
+         <div class="col-md-6 right-box">
+            <div class="row align-items-center">
+                  <div class="header-text mb-4">
+                       <h1 class="animate__animated animate__bounce">Login Here</h1>
+                  </div>
+                  <form  name="loginForm" >
+                      <div class="inputbox">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Email</mat-label>
+                          <input formControlName="email" matInput placeholder="john@gmail.com" required>
+                          <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+                      </div>
+
+                      <div class="inputbox">
+                        <mat-form-field appearance="outline">
+                          <mat-label>Password</mat-label>
+                          <input formControlName="password" matInput  required />
+                          <button mat-icon-button matSuffix [attr.aria-label]="'Hide Password'">
+                            <mat-icon></mat-icon>
+                          </button>
+                        </mat-form-field>
+                      </div>
+                      <div class="login">
+                          <button mat-flat-button color="primary" >Login<mat-icon iconPositionEnd>login</mat-icon></button>
+                      </div>
+                    </form>
+                    <div class="register-password">
+                      <button routerLink="/Auth/AdminRegister" mat-flat-button color="primary">Register</button>
+                       <a id="forgot" routerLink="/Auth/forgotpassword" href="">forgot password</a>
+                    </div>
+            </div>
+         </div>
+        </div>
+      </div>

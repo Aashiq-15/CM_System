@@ -1,0 +1,62 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="row border rounded-5 p-3 bg-white shadow box-area">
+    <div class="background-colour col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
+      <div class="featured-image mb-3">
+        <img src="/assets/images/keypad-454453.jpg" class="img-fluid">
+      </div>
+    </div>
+    <div class="col-md-6 right-box">
+      <div class="row align-items-center">
+        <div class="header-text mb-4">
+          <h1 class="animate__animated animate__bounce">Register Here</h1>
+        </div>
+        <form  name="registerForm" >
+          <div class="inputbox">
+            <mat-form-field appearance="outline">
+              <mat-label>User Name</mat-label>
+              <input  matInput placeholder="john" required>
+              <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <div class="inputbox">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="john@gmail.com" required>
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <div class="inputbox">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input  matInput  required />
+              <button mat-icon-button matSuffix  [attr.aria-label]="'Hide Password'">
+                <mat-icon></mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div class="inputbox">
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input  matInput  required>
+              <button mat-icon-button matSuffix  [attr.aria-label]="'Hide Password'" >
+                <mat-icon></mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="register">
+            <button mat-flat-button color="primary" >Register</button>
+          </div>
+        </form>
+        <!-- <div class="register-password">
+          <button routerLink="/Auth/adminLogin/" mat-flat-button color="primary">Login</button>
+          <a id="forgot" routerLink="/Auth/forgotpassword" href="">Forgot password</a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+

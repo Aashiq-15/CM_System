@@ -1,0 +1,49 @@
+<!-- form start -->
+<h2 mat-dialog-title>City Details</h2>
+<form (ngSubmit)="city()" name="cityForm" [formGroup]="cityForm">
+  <mat-dialog-content class="mat-typography">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>City ID</mat-label>
+              <input formControlName="cityId" matInput placeholder="C1234" required>
+              <mat-error *ngIf="cityForm.controls['cityId'].errors?.['required']">City ID is required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>City Name</mat-label>
+              <input formControlName="cityName" matInput placeholder="john" required>
+              <mat-error *ngIf="cityForm.controls['cityName'].errors?.['required']">City Name is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Description</mat-label>
+              <textarea formControlName="cityDescription" matInput required matInput></textarea>
+              <mat-error *ngIf="cityForm.controls['cityDescription'].errors?.['required']">City Description is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-flat-button color="primary" [disabled]="!cityForm.valid">{{data ? 'Update': 'Save'}}</button>
+  </mat-dialog-actions>
+</form>
+
+<!-- form is finished -->
+
+

@@ -1,0 +1,21 @@
+{
+  "programms": [
+    {
+      "id": "4812",
+      "programmId": "P2",
+      "programmName": "Python",
+      "university": "ATI",
+      "programmDescription": "scscdwe"
+    }
+  ],
+  "message": [],
+  "subjects": [
+    {
+      "id": "c508",
+      "subjectId": "S1",
+      "subjectName": "Fundemental",
+      "subjectHours": "12",
+      "subjectDescription": "sadasddfvdvkjudgywfdhdsa"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+<!-- form start -->
+<h2 mat-dialog-title>Add Transection</h2>
+<form  name="transactionForm" >
+  <mat-dialog-content class="mat-typography">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <div id="date" class="input-box">
+                <mat-form-field appearance="outline">
+                  <mat-label>Date</mat-label>
+                  <input  required matInput  placeholder="YYYY-MM-DD">
+                  <mat-datepicker-toggle matIconSuffix ></mat-datepicker-toggle>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="input-box">
+                <mat-form-field appearance="outline">
+                  <mat-label>Amount</mat-label>
+                  <input type="number"  matInput placeholder="C1234" required>
+                  <!-- <mat-icon matSuffix>account_circle</mat-icon> -->
+                </mat-form-field>
+              </div>
+            </div>
+
+
+            <div class="col-md-6">
+              <div class="input-box">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select the Transection Type</mat-label>
+                  <mat-select  required>
+                    <mat-option ></mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="input-box">
+                <mat-form-field appearance="outline">
+                  <mat-label>Select the Ledger</mat-label>
+                  <mat-select  required>
+                    <mat-option ></mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="input-box">
+                <mat-form-field appearance="outline">
+                  <mat-label>Receipt No</mat-label>
+                  <input  matInput required matInput>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="input-box">
+                <mat-form-field appearance="outline">
+                  <mat-label>Description</mat-label>
+                  <textarea  matInput required matInput></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-flat-button color="primary"></button>
+  </mat-dialog-actions>
+</form>
+
+<!-- form is finished -->

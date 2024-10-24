@@ -1,0 +1,59 @@
+<h2 mat-dialog-title>Programme Details</h2>
+<form (ngSubmit)="programm()" [formGroup]="programmForm">
+  <mat-dialog-content class="mat-typography">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Programm ID</mat-label>
+              <input formControlName="programmId" matInput placeholder="P1234" required>
+              <mat-error *ngIf="programmForm.controls['programmId'].errors?.['required']">Programme ID is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Programm Name</mat-label>
+              <input formControlName="programmName" matInput placeholder="john" required>
+              <mat-error *ngIf="programmForm.controls['programmName'].errors?.['required']">Programme Name is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>University</mat-label>
+              <input formControlName="university" matInput placeholder="university" required>
+              <mat-error *ngIf="programmForm.controls['university'].errors?.['required']">awardingBody/university Name is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12">
+          <div class="input-box">
+            <mat-form-field appearance="outline">
+              <mat-label>Programm Description</mat-label>
+              <textarea formControlName="programmDescription" matInput required></textarea>
+              <mat-error *ngIf="programmForm.controls['programmDescription'].errors?.['required']">Programme
+                Description is
+                required</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button mat-flat-button color="primary" [disabled]="!programmForm.valid">{{data ? 'Update':
+      'Save'}}</button>
+  </mat-dialog-actions>
+</form>

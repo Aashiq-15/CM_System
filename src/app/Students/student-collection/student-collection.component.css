@@ -1,0 +1,112 @@
+
+button{
+  margin-top: 5px;
+}
+
+.label{
+  background: rgb(216, 229, 235);
+   padding: 15px;
+  border-radius: 5px;
+  color:black;
+  font-weight: 500;
+  margin-left: 11.5px;
+  width: 47%;
+}
+.margins{
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.label2{
+  background: rgb(216, 229, 235);
+  padding: 15px;
+ border-radius: 5px;
+ color:black;
+ font-weight: 500;
+ margin-left: 3%;
+ width: 47%;
+}
+.background{
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  background: rgb(246,246,246);
+  background: radial-gradient(circle, rgba(246,246,246,1) 52%, rgba(228,227,242,1) 100%, rgba(196,192,231,1) 100%);
+}
+
+.breadcrumb li{
+  cursor: pointer;
+}
+#main{
+  cursor:text;
+  font-weight: 700;
+}
+nav{
+  margin:20px  -6px -6px;
+  padding: 20px 0px 5px 20px;
+  background: rgb(200, 211, 224);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.active{
+  color: rgb(13, 13, 212);
+  font-weight:500;
+}
+
+#heading {
+  text-align: center;
+    margin-top: 30px;
+  }
+
+  mat-form-field{
+    width: 100%;
+  }
+
+  #add{
+    background: hsl(221, 96%, 35%);
+    color: #fff;
+    padding: 25px 10px 25px 10px;
+    margin-left: 15px !important;
+
+   }
+
+   .studentid{
+    display:flex;
+   }
+
+
+/*------------ For small screens------------*/
+ @media only screen and (max-width: 768px) {
+
+  .background{
+    background: none;
+  }
+
+  .margins{
+    margin-top:0;
+    margin-bottom:0;
+  }
+
+  nav{
+    margin:20px  0px 0px;
+    padding: 20px 0px 5px 20px;
+    background: rgb(200, 211, 224);
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  nav li{
+    line-height: 25px;
+  }
+  .label{
+    background: rgb(207, 218, 223);
+     padding: 15px;
+    border-radius: 5px;
+    color:black;
+    font-weight: 500;
+    width:94%;
+  }
+
+
+}
+
+
+
